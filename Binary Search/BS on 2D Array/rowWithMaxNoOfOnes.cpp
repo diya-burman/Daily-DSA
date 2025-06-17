@@ -41,11 +41,12 @@ int rowWithMax1s(vector<vector<int>> &matrix, int n, int m)
 
 int main()
 {
-    int n = 3;
-    int m = 3;
-    
+    int n = 5;
+    int m = 5;
+
     vector<vector<int>> mat = {
-        {1, 1, 1},
+        {0, 0, 1, 1, 1},
+        {0, 0, 0, 0, 0},
         {0, 0, 1},
         {0, 0, 0}};
 
