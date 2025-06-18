@@ -32,13 +32,13 @@ int nthRoot(int n, int m)
         {
             return mid;
         }
-        else if (midN == 0)
+        else if (midN == 2)
         {
-            s = mid + 1;
+            e = mid - 1;
         }
         else
         {
-            e = mid - 1;
+            s = mid + 1;
         }
     }
     return -1;
