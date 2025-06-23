@@ -13,7 +13,7 @@ public:
 
 class queue {
 private:
-    Node* start;
+    Node* start=nullptr;
     Node* end=nullptr;
     int size=0;
 
