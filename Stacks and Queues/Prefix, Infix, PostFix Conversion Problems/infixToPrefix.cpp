@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stack>
 #include <algorithm>
+#include <string>
 using namespace std;
 
 class Solution
@@ -50,15 +51,20 @@ public:
             }
             else
             {
-                while (!st.empty() &&
-                       priority(s[i]) <= priority(st.top()))
-                {
-                    ans += st.top();
-                    st.pop();
+                if(s[i]=='^') {
+                    while(!st.empty() && priority(s[i])<=priority(st.top())) {
+                        ans +=st.top();
+                        st.pop();
+                    }
+                } else {
+                    while(!st.empty() && priority(s[i])<priority(st.top())) {
+                        ans+=st.top();
+                        st.pop();
+                    }
                 }
                 st.push(s[i]);
             }
-            ++i;
+            i++;
         }
 
         while (!st.empty())
@@ -71,3 +77,16 @@ public:
         return ans;
     }
 };
+
+int main()
+{
+    Solution sol;
+    string infix = "(p+q)*(c-d)";          // original expression
+
+    cout << "Infix  : " << infix << '\n';
+
+    string prefix = sol.preToInfix(infix); // convert to prefix
+    cout << "Prefix : " << prefix << '\n';
+
+    return 0;
+}
