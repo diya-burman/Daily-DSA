@@ -51,14 +51,19 @@ public:
             }
             else
             {
-                if(s[i]=='^') {
-                    while(!st.empty() && priority(s[i])<=priority(st.top())) {
-                        ans +=st.top();
+                if (s[i] == '^')
+                {
+                    while (!st.empty() && priority(s[i]) <= priority(st.top()))
+                    {
+                        ans += st.top();
                         st.pop();
                     }
-                } else {
-                    while(!st.empty() && priority(s[i])<priority(st.top())) {
-                        ans+=st.top();
+                }
+                else
+                {
+                    while (!st.empty() && priority(s[i]) < priority(st.top()))
+                    {
+                        ans += st.top();
                         st.pop();
                     }
                 }
@@ -81,7 +86,7 @@ public:
 int main()
 {
     Solution sol;
-    string infix = "(p+q)*(c-d)";          // original expression
+    string infix = "(p+q)*(c-d)"; // original expression
 
     cout << "Infix  : " << infix << '\n';
 
