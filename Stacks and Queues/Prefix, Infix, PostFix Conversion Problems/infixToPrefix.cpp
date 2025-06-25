@@ -17,28 +17,28 @@ public:
         return -1;
     }
 
-    string preToInfix(string pre_exp)
+    string preToInfix(string &s)
     {
-        int n = pre_exp.size();
+        int n = s.size();
         int i = 0;
         stack<char> st;
         string ans = "";
 
-        reverse(pre_exp.begin(), pre_exp.end());
+        reverse(s.begin(), s.end());
 
         while (i < n)
         {
-            if ((pre_exp[i] >= 'A' && pre_exp[i] <= 'Z') ||
-                (pre_exp[i] >= 'a' && pre_exp[i] <= 'z') ||
-                (pre_exp[i] >= '0' && pre_exp[i] <= '9'))
+            if ((s[i] >= 'A' && s[i] <= 'Z') ||
+                (s[i] >= 'a' && s[i] <= 'z') ||
+                (s[i] >= '0' && s[i] <= '9'))
             {
-                ans += pre_exp[i];
+                ans += s[i];
             }
-            else if (pre_exp[i] == '(')
+            else if (s[i] == '(')
             {
-                st.push(pre_exp[i]);
+                st.push(s[i]);
             }
-            else if (pre_exp[i] == ')')
+            else if (s[i] == ')')
             {
                 while (!st.empty() && st.top() != '(')
                 {
@@ -51,12 +51,12 @@ public:
             else
             {
                 while (!st.empty() &&
-                       priority(pre_exp[i]) <= priority(st.top()))
+                       priority(s[i]) <= priority(st.top()))
                 {
                     ans += st.top();
                     st.pop();
                 }
-                st.push(pre_exp[i]);
+                st.push(s[i]);
             }
             ++i;
         }
