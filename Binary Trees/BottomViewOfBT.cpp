@@ -28,7 +28,7 @@ public:
             q.pop();
             Node *node = it.first;
             int line = it.second;
-            mp[line] = node->data;
+            mp[line] = node->data; // same as top view of BT only diff is this
             if (node->left != NULL)
                 q.push({node->left, line - 1});
             if (node->right != NULL)
