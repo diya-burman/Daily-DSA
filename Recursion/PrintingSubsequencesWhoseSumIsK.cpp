@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+
 void printS(int ind, vector<int> &ds, int s, int sum, int arr[], int n)
 {
     if (ind == n)
