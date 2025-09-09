@@ -33,7 +33,7 @@ public:
         sort(stalls.begin(), stalls.end());
         int n = stalls.size();
         int s = 1;
-        int e = stalls[n - 1] - stalls[0];
+        int e = stalls[n - 1] - stalls[0]; //values in search space not indexes
         int ans = -1;
         while (s <= e)
         {

@@ -55,8 +55,8 @@ Node *deleteHead(Node *head)
     }
     Node *prev = head;
     head = head->next;
-    head->back = NULL;
-    prev->next = NULL;
+    head->back = nullptr;
+    prev->next = nullptr;
     delete prev;
     return head;
 }
@@ -72,10 +72,18 @@ Node *deleteTail(Node *head)
         tail = tail->next;
     }
     Node *prev = tail->back;
-    prev->next = NULL;
-    tail->back = NULL;
+    prev->next = nullptr;
+    tail->back = nullptr;
     delete tail;
     return head;
+}
+
+Node* removeKthElement(Node *head, int k)
+{
+   if(head==NULL) return NULL;
+   int cnt=0;
+   Node* kNode=head;
+   while()
 }
 
 int main()
