@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <algorithm> // for sort
-
 using namespace std;
 
 class Solution
